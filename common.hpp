@@ -123,5 +123,32 @@ static void write_size_str(size_t x, char* buf)
     }
 }
 
+static void parse_options(int argc, char** argv, Options& options)
+{
+    struct option long_options[] = {
+        {"verbose",                 no_argument,        0, 0},
+        {"busy_loop",               no_argument,        0, 0},
+        {"poll",                    no_argument,        0, 0},
+        {"huge_page",               no_argument,        0, 0},
+        {"check_huge_page",         no_argument,        0, 0},
+        {"buf_size",                required_argument,  0, 0},
+        {"write_with_vmsplice",     no_argument,        0, 0},
+        {"read_with_splice",        no_argument,        0, 0},
+        {"gift",                    no_argument,        0, 0},
+        {"bytes_to_pipe",           required_argument,  0, 0},
+        {"pipe_size",               required_argument,  0, 0},
+        {"lock_memory",             no_argument,        0, 0},
+        {"dont_touch_pages",        no_argument,        0, 0},
+        {"same_buffer",             no_argument,        0, 0},
+        {"csv",                     no_argument,        0, 0},
+        {0,                         0,                  0, 0}
+    };
+
+    opterr = 0;
+    while (true)
+    {
+        // TODO : Implement
+    }
+}
 
 #endif 
